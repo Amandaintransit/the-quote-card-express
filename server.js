@@ -6,7 +6,11 @@ const port = 8080;
 require("dotenv").config();
 const cors = require("cors");
 
+const corsOptions = {
+    origin: `http://localhost:${port}`
+}
 app.use(cors());
+app.use(cors(corsOptions));
 
 app.use(express.static("./public"));
 app.use(express.json());
